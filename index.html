@@ -2,12 +2,18 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+
+		<title>IoT - October 11, 2017</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/league.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +30,140 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h2>The Internet of Things</h2>
+					<h3>October 11, 2017</h3>
+					<p>Eric Mattison</p>
+					</p>emattison@gmail.com</p>
+					<aside class="notes">
+						BTW, Mea Culpa.  I screwed up and got the date wrong for last month's meeting.  I will endeavor to deliver The Best ABCD Talk Ever to make up for my transgression.
+					</aside>
+				</section>
+				<section>
+					<h2>Who is this guy?</h2>
+					<aside class="notes">
+						So who am I, anyway?
+					</aside>
+				</section>
+				<section>
+					<p><a href="https://scholar.harvard.edu/emattison">I was once like you.</a></p>
+					<aside class="notes">
+						(Before I became this horrible twisted thing.)<br><br>
+						Look!  I found my Scholar website!  That takes me back.  Also, that's probably the best photo anyone has ever taken of me.<br><br>
+
+						In fact, I used to be one of the organizers for ABCD-WWW.<br><br>
+
+						But then I sold my soul to Mammon/Big Pharma.  Now I work at Vertex Pharmaceuticals building internal web apps.  I would have a slide with the Vertex logo, or a photo of our building downtown, but our legal department requires a review of the disclosure of any of our intellectual property.<br><br>
+						
+						So no logos. And no disclosure of anything sensitive.  Sorry.<br>
+					</aside>
+				</section>
+				<section>
+					<h3>Huh?</h3>
+					<p>I thought you were here to talk about IoT at Vertex.</p>
+					<p class="fragment">Well, sorta.</p>
+					<aside class="notes">
+					Every year Vertex has a hackathon, where groups of IT folks gather and are presented with a challenge.  IoT had been a hot topic for a bit, so we thought, "Let's give the teams an IoT challenge".  Gradually, this morphed from "Let's do something with Raspberry Pis" to "Let's do something with Raspberry Pis and eggs" to "Let's remotely control Pis to cook eggs" to "And bacon!  And Toast!"  And thus the idea for IoT Breakfast was born.<br><br>
+					Later, when I told Raman about our hackathon, he said, "Cool!  Can you give an ABCD talk about it?"  And since saying no to Raman is like kicking a puppy, here I am.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Challenge 1: Sorting Eggs</h3>
+					<p>How can I tell if an egg is uncooked or hard-boiled?</p>
+					<aside class="notes">
+					The first challenge we gave our teams was to present them with a basket of eggs, some of which were hard-boiled and some were uncooked, and they had to sort them. Any ideas about how you would do this?<br><br>
+					Ok, now how would you make a machine that could do this?<br><br>
+					We decided to use the "candling" technique. 
+					</aside>
+				</section>		
+
+				<section>
+					<p><img src="/images/pi.jpg"></p>
+					<aside class="notes">
+					In our case, the idea was to develop a means where a machine could do the determination, and notify us remotely.  So we took a Raspberry Pi (1)...
+					</aside>
+				</section>		
+
+				<section>
+					<p><img src="/images/photoresistor.jpg"></p>
+					<aside class="notes">
+					...and connected it to a photoresistor (2). Now here's the really technical part: 
+				</section>	
+
+				<section>
+					<p><img src="/images/egg.jpg"></p>
+					<aside class="notes">
+					(3) we covered the photoresistor with a toilet paper roll and the egg.  High tech!
+					</aside>
+				</section>
+
+				<section>
+					<pre>
+#!/usr/bin/env python
+import RPi.GPIO as GPIO, time, os      
+
+DEBUG = 1
+GPIO.setmode(GPIO.BCM)
+
+def RCtime (RCpin):
+	reading = 0
+	GPIO.setup(RCpin, GPIO.OUT)
+	GPIO.output(RCpin, GPIO.LOW)
+	time.sleep(0.1)
+
+	GPIO.setup(RCpin, GPIO.IN)
+	# This takes about 1 millisecond per loop cycle
+	while (GPIO.input(RCpin) == GPIO.LOW):
+		reading += 1
+	return reading
+
+while True:                                     
+	print RCtime(18)     # Read RC timing using pin #18
+        			</pre>
+        			<aside class="notes">
+        				Now, using some python code shamelessly stolen from Adafruit's website, we can read how opaque a given egg is.  Especially when a flashlight was shined on them, hardboiled eggs had a significantly higher value, which meant they were blocking more light.
+        			</aside>
+				</section>
+
+				<section>
+					<h3>Challenge 2: Cooking the Raw Eggs</h3>
+					<aside class="notes">
+					In a lab setting, how do you boil an egg?  With this:
+					</aside>
+				</section>	
+
+				<section>
+					<p><img src="/images/hotplate.jpg"></p>
+					<aside class="notes">
+					Raise your hand if you know what this is.<br><br>
+					This is a stirrer-hot plate.  We can heat up a solution and stir it at the same time.  As you can see, there are nobs and displays to operate the device manually.  But what you can't see is that there is a serial port on the back.  We were able to hook up the serial port to a raspberry pi.  Here's the awesome part: not only could you read the temperature data from the probe or see how fast the stirrer was spinning, you could also issue commands!  Which is probably a really bad idea to do remotely.  But we did it anyway. Because extremely hot liquid overflowing the sides of a beaker is hilarious.
+					</aside>
+				</section>	
+
+				<section>
+					<h3>Challenge 3: Make Toast</h3>
+					<aside class="notes">
+					Finally, we decided that we needed toast with our eggs.  By the way, I was all for cooking bacon as well.  But bacon was deemed A) too difficult to deal with and B) culturally insensitive to our muslim, jewish and vegetarian coworkers.					
+					</aside>
+				</section>	
+
+				<section>
+					<p><img src="/images/toaster.jpg"></p>
+					<aside class="notes">
+					So we bought a few of the cheapest toasters off Amazon and encouraged folks to modify them so a servo could depress and release the lever.  By the way, is there a name for that thing?  Toaster lever?<br><br>
+					Again, the idea was to hook a Pi up to the servo and have it operate the toaster remotely.  Amazingly, only one toaster exploded and an acceptable number of Vertexians were injured.
+					</aside>
+				</section>	
+
+				<section>
+					<p><img src="/images/api.jpg"></p>
+					<aside class="notes">
+					And of course (Of Course!) I created an API for the devices to talk to.  Thus adding "The Internet" to the Internet of Things.
+					</aside>
+				</section>	
+
+
 			</div>
 		</div>
 
@@ -37,11 +175,19 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'slide',
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/math/math.js', async: true }
 				]
 			});
 		</script>

@@ -1,0 +1,40 @@
+IoT
+
+Internet of Things
+Eric Mattison
+October 11, 2017
+emattison@gmail.com
+
+Who I am
+- Used to be one of you.  Worked at Harvard Research Computing. Then I sold my soul.
+- Now work at Vertex Pharmaceuticals on internal applications that I can't talk about without first going through Legal.
+
+Why am I here?
+- Vertex is excited about the prospects of IoT, especially in Lab monitoring and control.
+- We had our yearly hackathon with an IoT theme that I helped organize.  The theme was "Vertex Breakfast"
+- Had teams remotely sort eggs (raw vs cooked) and make toast
+
+How do you tell if an egg is Cooked?
+- Hook a photoresistor up to a Raspberry Pi, cover that with a toilet paper roll, and cover that with an egg.  Then shine a bright light on the egg.  Light will (partially) pass through the raw egg and the overall resistance number will be less.
+
+Let's start with "Things"
+- pass a brick around
+That's a thing.
+
+Moving on to "The Internet"
+- show an ethernet cable
+That's the Internet
+My coworker Saul did an IoT presentation that focused almost entirely on "of".  We'll wave our hands at "of".
+
+Wrap the ethernet cable around the brick: "Internet of Things"
+- Not quite as absurd as it seems.  Remember Solar Roadways? 
+https://www.theverge.com/2014/5/26/5751880/plan-to-cover-roads-with-solar-panels-raises-1-million
+
+David Rose at MIT Media Lab "Enchanted Objects"
+http://enchantedobjects.com/about/
+  - glowing orb that informs you on weather, stock market, etc.
+Various things around us that we might not think of as networkable maybe at some point
+The carpet might sense weight and adjust the lights appropriately
+The microphone might do voice recognition and alter the network settings of the room when I say "As you can see in this video..."
+The power outlets in the room might inform facilities when someone is vacuuming, etc.
+
