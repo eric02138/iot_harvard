@@ -34,7 +34,7 @@
 					<h2>The Internet of Things</h2>
 					<h3>October 11, 2017</h3>
 					<p>Eric Mattison</p>
-					</p>emattison@gmail.com</p>
+					<p>emattison@gmail.com</p>
 					<aside class="notes">
 						BTW, Mea Culpa.  I screwed up and got the date wrong for last month's meeting.  I will endeavor to deliver The Best ABCD Talk Ever to make up for my transgression.
 					</aside>
@@ -230,7 +230,7 @@ while True:
 					<h3>ENIAC - Stats</h3>
  						<p class="fragment">Consumed 150 kilowatts of electricity</p>
  						<p class="fragment">Weighed 27 tons</p>
- 						<p class="fragment">5000 operations per second (base rate, multippcation and sq roots took longer)</p>
+ 						<p class="fragment">5000 operations per second (base rate, multiplication and sq roots took longer)</p>
  						<p class="fragment">Cost $487,000<br><br>($6,740,000 in 2016 dollars)</p>
  					<aside class="notes">
  					Ok, some stats. (Click through)<br>
@@ -251,7 +251,7 @@ while True:
 
 				<section>
 					<h3>iPhone X - Stats</h3>
- 						<p class="fragment">Consumes 1 kilowatt of electricity</p>
+ 						<p class="fragment">Consumes about 1 kilowatt of electricity</p>
  						<p class="fragment">Weighs 6.1 ounces</p>
  						<p class="fragment">All cores together amount to a clock speed of approximately 2.5GHz</p>
  						<p class="fragment">Cost &#36;999 (&#36;999 in 2017 dollars)</p>
@@ -266,7 +266,7 @@ while True:
 				</section>
 
 				<section>
-					<h3>Size and weight</h3>
+					<h3>Size and Weight</h3>
 					<p class="fragment">(duh)</p>
  					<aside class="notes">
  					Clearly, we wouldn't have these nifty little devices in our back pockets if they weren't small and light.  But that's not what interests me as much as other factors.
@@ -275,20 +275,207 @@ while True:
 
 				<section>
 					<h3>Power</h3>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Cholla_power_plant.jpg/640px-Cholla_power_plant.jpg" />
  					<aside class="notes">
+ 					The decline in power consumption for internet-enabled devices has enabled the mobile web in the form of our smart phones and laptops.  This means that our devices can be powered by batteries for a useful period of time.
+					</aside>
+				</section>
+
+				<section>
+					<img src="images/macbook.jpg" />
+					<p>10 Watts (watching Youtube)</p>
+					<p>49 Watt/Hour Capacity</p>
+
+ 					<aside class="notes">
+					For example, this laptop consumes roughly 10 watts of power during regular use. With a battery capacity of 49 watt hours, that means I can work for about 5 hours at Crema Cafe before I need to recharge.  Interestingly, the battery capacity actually went down from 99 watt hours on the previous Macbook Pro.  Combined with all the other useless new "features" like the stupid touch bar and the USB-C ports, it's a hunk of junk.
+					</aside>
+				</section>
+
+				<section>
+					<p>From this...</p>
+					<img width="256" alt="Duracell 9 Volt 0849" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Duracell_9_Volt_0849.jpg/256px-Duracell_9_Volt_0849.jpg" />
+ 					<aside class="notes">
+ 					The other side of this equation is that batteries have come a long way.
+					</aside>
+				</section>
+
+				<section>
+					<p>...to this.</p>
+					<img width="500" src="images/lithiumion.jpg"/>
+ 					<aside class="notes">
+					I bought this 3.7 volt rechargable Lithium Ion batteries for one of my Arduino projects.  It's small and light, and since it's rechargable, there's not the hassle of having to periodically buy new batteries.  Gradually these have lead to a transportation revolution.  More on that later.
 					</aside>
 				</section>
 
 				<section>
 					<h3>Infrastructure</h3>
+					<img src="images/tube.jpg"/>
  					<aside class="notes">
+ 					What's this? <br>
+ 					It's a series of tubes!<br>
+ 					Well, not anymore.
+					</aside>
+				</section>
+
+				<section>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Metro_Wireless_Node.jpg/800px-Metro_Wireless_Node.jpg"/>
+ 					<aside class="notes">
+ 					This is a municipal wifi access point.  Increasingly, we demand universal connectivity.  You can see this demand in practice on the T.  On my ride from South Station to Harvard Square, my wireless signal cuts out right around Downtown Crossing and doesn't return until Charles/MGH.  When this happens, I look around and watch as one by one my fellow passengers get pissed off as they lose service.  You're underground people!  What do you expect?<br><br>
+ 					But as wireless access of one flavor or another becomes widespread, we're going to see more and more IoT devices taking advantage of/depending on that infrastructure.  
+					</aside>
+				</section>
+
+				<section>
+					<h3>Cost</h3>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/US_%242_bill_obverse_series_2003_A.jpg/640px-US_%242_bill_obverse_series_2003_A.jpg" />
+ 					<aside class="notes">
+ 					I had to use this image.  Jefferson got screwed, didn't he?  But hey, he died in massive debt, so I guess this is apt.
+					</aside>
+				</section>
+
+				<section>
+					<img width="400" height="400" src="https://upload.wikimedia.org/wikipedia/commons/3/38/Arduino_Uno_-_R3.jpg" />
+					<p>~$25</p>
+ 					<aside class="notes">
+ 					Here's an Arduino.  It costs around 25 bucks.  It's not quite a computer, but it can run on battery power.  It doesn't come with wifi natively but that can be added with the appropriate add-on shield.  (Interestingly wifi shield for Arduino are actually around $40 for some reason.)  Still, at $65 bucks, it's pretty cheap. 
+					</aside>
+				</section>
+
+				<section>
+					<img src="images/photon.png" />
+					<p>~$20</p>
+ 					<aside class="notes">
+ 					Here's an Particle Photon.  Again, cheap at $20.  It does wifi natively, but it doesn't come with the ability to natively connect a battery.  You need a $25 add-on for that.  Spot a trend?  It's the whole give away the razor and sell the blades trick.<br><br>  
+ 					But that's not my point.  My point is, for the technology you're getting, this is stupid cheap.  You're getting a whole integrated circuit for less that $100!  That's incredible.  How is this possible?
+					</aside>
+				</section>
+
+				<section>
+					<h3>Globalization</h3>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/480px-The_Earth_seen_from_Apollo_17.jpg" />
+ 					<aside class="notes">
+ 					Here's a little exercise.  I have two spice grinders I picked up at Trader Joes.  (Pass around)<br><br>
+ 					One has Himalayan Sea Salt, and the other had a blend of Peppercorns.  Any guesses on the price I paid for the salt?<br>
+ 					How about the pepper?<br>
+ 					The salt was $1.99 and the pepper was $2.99.  Just above the words that says "Himalayan Pink Sea Salt" can you read what the label says?  And you, just above the label that says "Rainbow Peppercorn"?<br>
+ 					So the salt was first mined in Pakistan, driven to a port, loaded onto a ship, shipped to South Africa, unloaded, driven to a packaging plant, driven back to port, reloaded onto a ship, shipped to California, unloaded and brought to Trader Joe's distribution center, then driven to my local Trader Joes.<br> 
+ 					And the peppercorns made a similar journey, though they first came from Brazil, India and Malaysia originally.  And somehow Trader Joes can sell these for a profit at $2 and $3, respectively.<br><br>
+ 					So what are some of the costs in producing these delicious spices?  Just shout out an answer.<br><br<
+ 					(Fuel, packaging, labor, physical assets, fees)<br><br>
+ 					What kind of physical assets?  Someone had to pay for that boat - presumably they eventually want to make a profit on it.  Warehousing.  Machinery.  And all of it has to be insured.  <br><br>
+ 					Who's involved with labor?<br><br>
+ 					(Miners, pickers, driers, drivers, port workers, forklift operators, sailors, managers, TJs executives)<br><br>
+ 					What is the most obvious way to reduce the cost of these products?
+					</aside>
+				</section>
+
+				<section>
+					<img src="images/nap.jpg" />
+					<p class="fragment">Per month income at PegaTron:<br>4,200 yuan to 5,500 yuan</p>
+					<p class="fragment">$650 - $850</p>
+ 					<aside class="notes">
+ 					Here's a photo of some chinese electronics workers.  These guys are actually allowed a 30 minute post-lunch nap - apparently it makes them more productive.<br><br>
+ 					Although I'm sure they're also tired.  Here's a report from a 2014 BBC investigation:<br>
+ 					In December 2014 a BBC investigation exposed poor working conditions and employee mistreatment at Pegatron factories making Apple products near Shanghai.[12] It uncovered staff forced to work eighteen days straight without a day off, workers falling asleep on the production line during 12-hour shifts (sometimes 16 hours), forced overtime and dormitory rooms where 12 workers shared a cramped room.<br><br>
+ 					And these are the good jobs.  These are the jobs people are leaving the countryside in droves for.  The Economist recently had an article about how China was working to create new cities to accomodate all of these migrants.  So there's our answer - let's keep these people in mind next time we marvel at the low cost of a Raspberry Pi.
+					</aside>
+				</section>
+
+				<section>
+					<p class="fragment">Globalization &#x2197; <br>+</p>
+					<p class="fragment">Cost &#x2198; <br>+</p>
+					<p class="fragment">Infrastucture &#x2197; <br>+</p>
+					<p class="fragment">Power &#x2197; <br>+</p>
+					<p class="fragment">Size and Weight &#x2198; =</p>
+					<p class="fragment">?</p>
+ 					<aside class="notes">
+ 					Ok, working backwards, we have these trends:<br>
+					</aside>
+				</section>
+
+				<section>
+					<h3>The Future</h3>
+ 					<aside class="notes">
+ 					Assuming these trends continue, can we extrapolate anything about our future?
+					</aside>
+				</section>
+
+				<section>
+					<h3>Globalization &#x2197;</h3>
+ 					<aside class="notes">
+					The consequences of globalization are the hardest to anticipate, because there's as many input factors as there are people.  Last year, global chocolate prices spiked due to a drought in West Africa and increased demand from a growing middle class in China.  As a result, Hershey's, Mars and Cadbury collectively ponied up $1 Billion to help increase cocoa production in Ghana.  Meanwhile, Starbucks is planning to open 2,500 stores in China by 2021, so we can expect global coffee prices to go up as supply is decreased.  What if there's an electronic DIY fad in China?  What will happen to our precious supply of Raspberry Pis?
+					</aside>
+				</section>
+
+				<section>
+					<h3>Cost &#x2198;</h3>
+ 					<aside class="notes">
+ 					As cost goes down, plan on seeing a scatter-gun approach to IoT.  The chairs you're sitting on don't have IoT devices in them, yet.  (Or do they?)  Once the cost of devices drops low enough, they might.  Facilities could monitor how they're arranged or if they've magically left the building.  They might tell a presenter that his audience is bored and squirming in their seats.<br>
+ 					Devices might become so widespread that they become indistinguishable from infrastructure.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Infrastructure &#x2197;</h3>
+ 					<aside class="notes">
+ 					Infrastructure is not sexy.  Paving roads isn't that interesting.  Unless they're - (Solar Freakin' Roadways)<br>
+ 					Networking, likewise, is not sexy.  But it's the backbone upon which the "I" in IoT rests.  Thankfully, advancements in networking, especially wireless networking are coming along nicely.  This is partially thanks to my friend Thomer Gil, who used to be the lead programmer of the mesh networking company Meraki.  If you haven't heard of them, that's because they sold the company to Cisco.  He now lives in a very nice house on a canal in Amsterdam.<br><br>
+ 					Interestingly, now that he's back home in Holland, he has become interested in automating Antwerp's industrial barge traffic.  Presumably, some wireless networking would be required.
 					</aside>
 				</section>
 
 
 				<section>
-					<h3>Cost</h3>
+					<h3>Power &#x2197;</h3>
+					<p class="fragment"><a href="https://www.youtube.com/embed/cCgZAo5JECs?autoplay=1">Electric Skateboard Hacking</a></p>
+
  					<aside class="notes">
+ 					Today's rechargable batteries represent a revolution.  I regularly see electric skateboards on my ride to work these days.  They have a relatively simple bluetooth user interface, but they've already been hacked.<br><br>
+
+ 					Still, they're pretty neat.  I chatted with a guy on one of these skateboards - he was already looking forward to the new battery that's supposed to come out next year.<br><br>
+
+ 					But don't get me started on the people who ride electric assist bikes.<br><br>
+
+ 					Power management using IoT holds the promise of dramatic energy savings.  According to the Department of Energy, Heating and cooling account for about 48% of the energy use in a typical U.S. home, making it the largest energy expense for most homes.<br>
+ 					What if we had IoT "smart" homes?  For example, to keep the house cool in the summertime, the windowshades on the south and west-facing sides of your house could automatically be lowered, except when weather.gov said it was overcast.<br><br>
+
+ 					For commercial use, a room like this could be "pre-cooled" for this capacity crowd based on who rsvp-ed online.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Size and Weight &#x2198;</h3>
+					<p>(duh)</p>
+ 					<aside class="notes">
+					A decrease in size and weight means that we'll all be able carry around more of these devices.  In fact, they may become so inobtrusive that we might not even be aware of them.  Devices may be sewn into our clothes, embedded in our walls, and implanted in our children.  Really, you have nothing to worry about.  After all, the NSA are the good guys, right? 
+					</aside>
+				</section>
+
+				<section>
+					<h3>We Seek the Grail</h3>
+
+					<p class="fragment"><a href="http://www.npr.org/sections/money/2015/02/05/382664837/map-the-most-common-job-in-every-state">Most Common Job in Every State</a></p>
+
+					<p class="fragment">4%</p>
+
+ 					<aside class="notes">
+ 					The self-driving automobile is the Holy Grail of IoT.  There's so much money to made in self-driving cars and trucks that Amazon, Uber, Ford, GM, etcetera can't afford *not* to be heavily invested in this technology.<br><br>
+
+ 					While eliminating the driver for shipping purposes would dramatically decrease the cost of fulfillment for business, there is a downside. (first link)  As manufacturing moved overseas, driving a truck is one job that doesn't require a diploma and can't be outsourced.  What happens to all those truck drivers is anyone's guess.<br><br>
+
+ 					(second link)
+ 					Here's another statistic: 4%.  Your car is actually being driven about 4% of the time.  What if it drove itself?  You could lend out your car to other people while you weren't using it?  Maybe people stop owning cars altogether - maybe access to self-driving cars becomes a yearly subscription service.  And since all these cars are in use all the time, there's no need for parking spaces anymore.  What would we do with all the extra space?  What would we do with all the empty parking lots?  Self driving cars could change how our cities look and how we behave.  Which leads to the question...
+					</aside>
+				</section>
+
+				<section>
+					<h3>"Am I still a Masshole if I can't cut anyone off?"</h3>
+
+					<p class="fragment">...also...</p>
+					<p class="fragment">"The cah won't pahk in Hahvahd yahd!"</p>
+
+ 					<aside class="notes">
+ 					Thank you.
 					</aside>
 				</section>
 
